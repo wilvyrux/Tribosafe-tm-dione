@@ -1,0 +1,78 @@
+
+body {
+    font-family: $font-primary;
+    font-size: 14px;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+div,
+ul li,
+a {
+    font-family: $font-primary;
+}
+
+
+h1.vc_custom_heading,
+h2.vc_custom_heading,
+h3.vc_custom_heading,
+h4.vc_custom_heading,
+h5.vc_custom_heading
+{
+    font-family: $font-primary;
+}
+
+.rounded {
+    @include border-radius(7px);
+}
+
+* {
+    @include transition(.3s);
+}
+    
+
+.padding-reset {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.padding-left-reset {
+    padding-left: 0 !important;
+}
+
+.padding-right-reset {
+    padding-right: 0 !important;
+}
+
+h2.heading {
+    font-size: 2.5em;
+    font-weight: $medium;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+h3.description {
+    font-size: 1.8em;
+    text-transform: uppercase;
+    border-bottom: 1px solid $color-lightgray;
+    padding-bottom: 10px;
+}
+
+
+.reset-padding {
+
+    > div {
+        padding: 0 !important;
+    }
+    
+}

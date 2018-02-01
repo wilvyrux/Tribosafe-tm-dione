@@ -1,0 +1,49 @@
+.primary-button 
+
+{
+    background: $color-secondary;
+    display: inline-block;
+    padding: 12px 30px;
+    color: $color-white;
+    text-transform: capitalize;
+    @include border-radius(5px);
+    text-decoration: none !important;
+    font-weight: $bold;
+    text-align: center;
+    
+    &:hover {
+        background: $color-primary;
+    }
+    
+}
+
+.buttons-holder {
+    .primary-button {
+        padding: 10px 10px;
+        width: 100%;
+        font-weight: $bold;
+        text-align: center;
+    }
+    
+    .blue {
+        background: $color-primary;
+        
+        &:hover {
+            background: $color-third;
+        }
+    }
+    
+    
+    > div {
+        @media only screen and (max-width:800px) {
+           padding: 0;
+        }
+    }
+    
+    a {
+        @media only screen and (max-width:800px) {
+            width: 100%;
+            margin: 10px 0;
+        }
+    }
+}

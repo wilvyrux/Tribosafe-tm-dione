@@ -1,0 +1,144 @@
+
+//****************************
+//HEADINGS 
+//****************************
+
+//color heading background
+$color-heading-primary:$color-dark;
+$color-heading-secondary:$color-primary;
+$color-heading-third:$color-white;
+$color-heading-fourth:$color-dark;
+
+
+//color heading BEFORE AFTER OBJECT
+$background-heading-before-primary:$color-blue;
+$background-heading-before-secondary:$color-primary;
+$background-heading-before-third:$color-white;
+$background-heading-before-fourth:$color-blue;
+
+
+
+
+
+//HEADING STYLE 1
+.wx-heading {
+    text-decoration: none !important;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 35px;
+    
+
+    .primary-heading,
+    .secondary-heading,
+    .third-heading,
+    .fourth-heading
+    {
+
+        display: inline-block;
+//        font-size:3.063em;
+        margin: 0;
+        text-transform: uppercase;
+        font-family: $font-select;
+        //        color: $color-dark;
+        font-weight: $light;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            height: 21px;
+            width: 114px;
+            bottom: -25px;
+            /* margin-right: 15px; */
+            /* margin-bottom: -20px; */
+            margin: auto !important;
+           
+            right: 0;
+            left: 0;
+            position: absolute;
+
+        }
+
+    }
+
+
+
+
+    .primary-heading {
+        color: $color-heading-primary;
+        font-size: 3.125em;
+        
+//        &::before {
+//             background: url('../custom-php/sprite.jpg')no-repeat;
+//        }
+        
+        @media only screen and (max-width:800px) {
+            font-size: 2em
+        }
+        
+    }
+
+
+    .secondary-heading {
+        color: $color-heading-primary;
+        font-size: 2em;
+        text-transform: capitalize;
+        font-weight: $medium;
+        
+        
+        &::before {
+           display: none;
+        }
+    }
+
+    .third-heading {
+        color: $color-heading-third;
+        font-size: 2em;
+        text-transform: capitalize;
+        font-weight: $medium;
+        
+    }
+
+
+    .fourth-heading {
+        color: $color-white;
+        font-size: 3.5em;
+        margin-bottom: 25px;
+
+        
+    }
+    
+    
+    .heading-subtitle,p {
+        width: 80%;
+        margin: auto;
+        font-weight: $light;
+        font-style: italic;
+    }
+    
+    .image {
+        img {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    }
+    
+
+
+}
+
+.no-subtitle {
+    .heading-subtitle,p {
+            display: none;
+    }
+}
+
+.with-subtitle {
+    .heading-subtitle,p{
+        display: none;
+    }
+}
+
+
+
+

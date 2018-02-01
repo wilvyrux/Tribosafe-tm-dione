@@ -1,0 +1,235 @@
+<?php
+/**
+ * The template for displaying all single posts.
+ *
+ * @package Infinity
+ */
+get_header();
+
+$portfolio_header_section = Kirki::get_option( 'tm-dione', 'portfolio_header_section_enable' );
+$tm_dione_heading_image = get_post_meta( get_the_ID(), "portfolio_heading_image", true );
+$portfolio_single_layout = get_post_meta( get_the_ID(), "portfolio_single_layout", true );
+
+$tm_dione_heading_image = do_shortcode( $tm_dione_heading_image );
+$tm_dione_heading_image = str_replace( 'http://http://', 'http://', $tm_dione_heading_image );
+$tm_dione_heading_image = str_replace( 'https://https://', 'https://', $tm_dione_heading_image );
+
+if(empty($portfolio_single_layout)) {
+	$portfolio_single_layout = Kirki::get_option( 'tm-dione', 'portfolio_single_layout' );
+}
+
+$style = '';
+if ( $tm_dione_heading_image ) {
+	$style .= 'background-image: url(\'' . ( $tm_dione_heading_image ) . '\');';
+}
+$id_style = uniqid('page-header-style-');
+tm_dione_apply_style($style, '#' . $id_style);
+?>
+
+
+
+<!--FROM BANNER SUBPAGES POST BACKGROUND-->
+<?php $page = get_page( 1399 ); ?>
+<?php $img_id =  get_post_meta($page->ID,'upload_banner_image',true); ?>
+<?php $banner_img = wp_get_attachment_image_url($img_id, 'full'); ?>
+
+<div style="background:url(<?php echo $banner_img; ?>)no-repeat;" class="banner-subpage">  
+
+    <div class="container">
+        <div class="col-md-12">
+            
+            <div class="col-md-12 text-center">
+                <h1><?php the_title(); ?></h1>
+                <div class="breadcrumb">
+                    <?php echo tm_bread_crumb( array( 'home_label' => Kirki::get_option( 'tm-dione', 'breadcrumb_home_text' ) ) ); ?>
+                </div>
+            </div>
+            
+        </div>
+    
+    </div>
+    
+</div>
+
+
+
+
+
+	<div class="container single-wrapper">
+        
+        
+        
+        
+        
+        
+<?php if(have_posts()) : ?>
+<?php while(have_posts()) : the_post(); ?>
+        
+            
+
+        
+                         <?php
+//                                Product FEATURE IMAGE
+                                $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'full') );
+        
+                                
+        
+                                //TO CALL THE CATEGORIES
+//                                $current_cat = get_queried_object();
+        
+                                $args = array('orderby' => 'term_id', 'order' => 'ASC' );
+                                $terms = get_the_terms( get_the_ID(), 'product_categories', $args );
+                         
+                                if ( $terms && ! is_wp_error( $terms ) ) {
+                                $current_cat = $terms[0];
+                                }
+        
+                            
+//                              category image
+                                $img_cat = '<img src="'. do_shortcode('[wp_custom_image_category onlysrc="true" size="full" term_id="'.$current_cat ->term_id.'" alt="alt :)"]') .'">';
+//                              category description
+                                $current_cat_name_desc = $current_cat->description;
+                                $current_cat_name = $terms ->name;
+//                              summary category
+                                $taxonomy_description = get_field('summary_description','product_categories_'.$current_cat->term_id);
+        
+                                $brochure = get_field('upload_brochure','product_categories_'.$current_cat->term_id);
+                                $brochure_link = $brochure['url'];
+
+                                $data_data = get_field('upload_data_sheet','product_categories_'.$current_cat->term_id);
+                                $data_data_link =  $data_data['url'];
+
+                                $data_safety = get_field('upload_safety_datasheet','product_categories_'.$current_cat->term_id);
+                                $data_safety_link =  $data_safety['url'];
+        
+        
+                        ?>
+        
+        
+        
+
+        <div class="col-md-12">
+
+            <div class="single-content">
+                
+                   
+                <div class="content-summary col-md-12">
+                    
+                    <div class="col-md-12">  <h2> <?php the_title(); ?></h2>  </div>
+                    
+                    <div class="col-md-5">
+                         <div class="featured_img">
+                              <img src="<?php echo $url; ?>">
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="col-md-7">
+                        
+                        <div class="category-information">
+                             <p><?php echo $taxonomy_description; ?></p>
+                        </div>
+                        
+                        <div class="right-content">
+                            <?php the_content(); ?>
+                        </div>
+                        
+                        <ul class="button-holder">
+                            <li><a href="#" class="inquiry-btn" data-name2="<?php the_title(); ?>"> Request Quotation </a></li>
+                        </ul>
+                        
+                    </div>
+                  
+                   
+                </div>
+                
+              
+            </div>
+            
+
+        </div>
+        
+        
+        
+        <?php endwhile; ?>
+        <?php else : ?>
+        <?php endif; ?>
+        
+        
+	</div>
+
+
+
+                
+    <div class="related_main_wrapper">
+        <div class="container">
+            
+<!--            next and prev-->
+                <div class="col-md-12 buttons_wrapper">
+                    <div class="col-md-6 text-left"> <?php next_post_link('%link', '<i class="fa fa-long-arrow-left" aria-hidden="true"></i>  Previous'); ?>  </div>
+                    <div class="col-md-6 text-right"> <?php previous_post_link('%link', 'Next <i class="fa fa-long-arrow-right" aria-hidden="true"></i>'); ?>  </div>
+                </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+<section class="getquote-product">
+            <div class="invisible_btn"></div>
+
+            <div class="container quote-wrapper">
+
+                <div class="header-wrapper">
+                    <div class="col-xs-11">   
+                        <h3> Product Inquiry - <span class="product-title"> <?php the_title(); ?> </span> </h3>  
+                    </div>
+                    <div class="col-xs-1">   
+                        <a href="#" class="close2"></a> 
+                    </div>
+                </div>
+                
+                
+<!--                GET THE PAGE ID TITLE-->
+                <?php $page = get_page( 1067 ); ?>
+
+                <div class="col-md-12 body-content">
+                    <?php echo do_shortcode( $page->post_content ); ?>
+
+                </div>
+            </div>
+
+</section>
+
+
+<script>
+
+        jQuery(".getquote-product").hide();
+        jQuery(".inquiry-btn").click(function(){
+                jQuery(".getquote-product").fadeIn(800);
+        });
+
+        jQuery(".close2").click(function(){
+                jQuery(".getquote-product").fadeOut(800);
+        }); 
+
+        jQuery(".invisible_btn").click(function(){
+                jQuery(".getquote-product").fadeOut(800);
+        });
+    
+    
+//        RELATED ARROW FAVICON
+        jQuery('.getquote-product a.close2').append('<i class="fa fa-times" aria-hidden="true"></i>'); 
+
+</script>
+
+
+
+
+
+
+
+<?php get_footer(); ?>

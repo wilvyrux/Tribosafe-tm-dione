@@ -1,0 +1,87 @@
+
+
+//****************************
+//BUTTONS 
+//****************************
+
+//primary background and color
+$background-button-primary:transparent;
+$color-button-primary:$color-white;  
+
+
+//secondary background and color
+$background-button-secondary:$color-primary;
+$color-button-secondary:$color-primary;
+
+
+
+
+//BUTTONS STYLE 1 
+.wx-button {
+    text-decoration: none !important;
+    display: block;
+
+    .primary-button,
+    .secondary-button
+    {
+        display: inline-block;
+        padding: 10px 30px;
+        text-transform: uppercase;
+        font-family: $font-primary;
+        margin: 0;
+        color: $color-white;
+
+
+        &:hover {
+            background: $color-secondary;
+            color: $color-white;
+        }
+    }
+
+
+    .primary-button {
+        background: $background-button-primary;
+        border: 0;
+        color: $color-button-primary;
+        font-weight: $bold;
+        
+        &:hover {
+            opacity: .6;
+        }
+        
+    }
+
+    .secondary-button {
+        border:2px solid $background-button-secondary;
+        color: $color-button-secondary;
+        font-weight: $bold;
+        padding: 15px 20px;
+        @include border-radius(5px);
+        
+        &:hover {
+            background: $color-primary;
+            color: $color-white;
+        }
+        
+    }
+    
+       
+    
+    .third-button {
+        color: $color-white;
+        padding-bottom: 25px;
+        
+        &::after {
+            content: "\f178";
+            margin-left: 5px;
+            @include fontawesome;
+        }
+        
+    }
+    
+
+
+
+}
+
+

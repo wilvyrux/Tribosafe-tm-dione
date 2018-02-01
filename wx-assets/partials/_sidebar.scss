@@ -1,0 +1,169 @@
+.sidebar-holder {
+    
+    aside {
+        border: 1px solid $color-lightgray;
+        
+        .widget-title {
+            background: $color-primary;
+            color: $color-white;
+            margin: 0;
+            padding: 17px 15px;
+            font-weight: $medium;
+            font-size: 1.3em;
+        }
+        
+        
+        form.search-form {
+            margin: 15px;
+        }
+        
+        
+        ul {
+            li {
+                a {
+                    display: block;
+                    padding: 12px 15px;
+                    text-transform: uppercase;
+                    color: $color-third; 
+                    background: $color-white;
+                    color: $color-third;
+                    cursor: pointer;
+                    text-decoration: none;
+                    
+                    &:hover {
+                        opacity: .5;
+                    }
+                }
+                
+               
+            }
+        }
+        
+        
+        
+        ul.menu  {
+            
+            > li {
+                
+                > a {
+                    border-bottom: 1px solid $color-lightgray;
+                }
+                
+                
+                ul.sub-menu {
+                    position: absolute;
+                    width: 250px;
+                    z-index: 9;
+                    left: 90%;
+                    top: 0;
+                    display: none;
+                    padding-left: 50px;
+                    
+                    li {
+                        a {
+                            border: 1px solid $color-lightgray;
+                            display: block;
+                            
+                            
+                             &:hover {
+                                opacity: .9 !important;
+                            }
+                            
+                        }
+                    }
+                    
+                }
+                
+                
+                &:hover {
+                    ul.sub-menu {
+                        display: block;
+                    }
+                }
+                
+                
+                &:last-child {
+                    a {
+                        border-bottom: 0 !important;
+                    }
+                }
+                
+            }
+            
+        }
+        
+        
+        
+        .sidebar-product-main-wrapper {
+            
+            .product_details {
+                h1 {
+                    margin: 0 !important;
+                    background: $color-primary;
+                    color: $color-white;
+                    font-size: 1em;
+                    padding: 15px;
+                }
+            }
+            
+            
+            .owl-controls {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                text-align: right;
+                
+                .owl-nav {
+                    
+                    > div {
+                            display: inline-block;
+                            padding: 5px 10px;
+                            background: $color-gray;
+                            margin-right: 5px;
+                            margin-top: 5px;
+                        
+                        i {
+                            color:$color-white;
+                            
+                        }
+                        
+                        
+                    }
+                    
+                }
+                
+                
+            }
+            
+            
+            
+        }
+        
+        
+        
+        
+        &:last-child {
+            
+                border: 0 !important;
+                
+                .sidebar-product-main-wrapper {
+                    margin: 10px !important;
+                    border: 1px solid $color-lightgray;
+                }
+                
+            
+        }
+        
+        
+        
+        
+    }
+    
+}
+
+
+
+
+    
+

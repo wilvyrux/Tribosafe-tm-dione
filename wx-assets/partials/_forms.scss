@@ -1,0 +1,226 @@
+ .gform_wrapper {
+        max-width: 100%;
+     
+     
+        .validation_error {
+            font-size: 11px !important;
+            background: $color-primary;
+            padding: 11px !important;
+            color: $color-white !important;
+            border: 0 !important;
+        }
+     
+       
+     
+        
+        .gform_heading {
+            display: none;
+        }
+        
+        .gform_body {
+            
+            
+            ul {
+                
+                   .gfield.gfield_error, 
+                    .gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+                        padding: 5px !important;
+                        background: $color-primary;
+                        max-width: 100% !important;
+                        width: 100% !important;
+                        color: $color-white !important;
+                    }
+                
+                
+                
+                li {
+                    width: 100%;
+                    margin-bottom: 15px;
+                    padding: 0 !important;
+                    
+                    
+                 
+                    
+
+                    input, button, select, textarea {
+                        width: 100% !important;
+                        color: $color-gray;
+                        padding: 10px;
+                        background: $color-white;
+                        outline: 0;
+                        @include border($value:1px, $color:$color-primary);
+                        
+                         
+                        
+                    }
+                    
+//                    > label {
+//                        display: none !important;
+//                    }
+                    
+//                    &:first-child, 
+//                    &:nth-child(2)
+//                    {
+//                        float: left;
+//                        clear: none !important;
+//                        width: 50% !important;
+//                       
+//                        
+//                    }
+                    
+//                    &:first-child {
+//                        input {
+//                           width: 98% !important;
+//                        }
+//                    }
+
+                }
+            }
+        }
+        
+        .gform_footer {
+            
+            input[type="submit"] {
+                background: $color-primary;
+                color: $color-white;
+                @include border($color:$color-darkblue);
+                text-transform: uppercase;
+                padding: 10px 30px;
+                width: 100%;
+                @include border-radius(5px);
+                @include transition(.3s);
+                
+                &:hover {
+                    background: $color-darkblue;
+                    color: $color-white;
+                }
+                
+            }
+            
+        }
+        
+        
+}
+
+
+
+
+
+#contact-page-wrapper {
+     .gform_wrapper {
+        max-width: 100%;
+     
+     
+        .validation_error {
+            font-size: 11px !important;
+            background: $color-primary;
+            padding: 11px !important;
+            color: $color-white !important;
+            border: 0 !important;
+        }
+     
+       
+     
+        
+        .gform_heading {
+            display: none;
+        }
+        
+        .gform_body {
+            
+            
+            ul {
+                
+                   .gfield.gfield_error, 
+                    .gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+                        padding: 5px !important;
+                        background: $color-primary;
+                        max-width: 100% !important;
+                        width: 100% !important;
+                        color: $color-white !important;
+                    }
+                
+                
+                
+                li {
+                    width: 100%;
+                    margin-bottom: 15px;
+                    padding: 0 !important;
+                    
+                    
+                 
+                    
+
+                    input, button, select, textarea {
+                        width: 100% !important;
+                        color: $color-gray;
+                        padding: 10px;
+                        background: $color-white;
+                        outline: 0;
+                        @include border($value:1px, $color:$color-primary);
+                        
+                         
+                        
+                    }
+                    
+                    
+                    textarea {
+                        height: 245px;
+                    }
+                    
+                    
+                    > label {
+                        display: none !important;
+                    }
+                    
+//                    &:first-child, 
+//                    &:nth-child(2)
+//                    {
+//                        float: left;
+//                        clear: none !important;
+//                        width: 50% !important;
+//                       
+//                        
+//                    }
+                    
+//                    &:first-child {
+//                        input {
+//                           width: 98% !important;
+//                        }
+//                    }
+
+                }
+            }
+        }
+        
+        .gform_footer {
+            
+            input[type="submit"] {
+                background: $color-secondary;
+                color: $color-white;
+                @include border($color:$color-darkblue);
+                text-transform: uppercase;
+                padding: 10px 30px;
+                @include border-radius(5px);
+                @include transition(.3s);
+                display: inline-block;
+                width: auto;
+                
+                &:hover {
+                    background: $color-darkblue;
+                    color: $color-white;
+                }
+                
+            }
+            
+        }
+        
+        
+}
+    
+    
+}
+
+
+
+
